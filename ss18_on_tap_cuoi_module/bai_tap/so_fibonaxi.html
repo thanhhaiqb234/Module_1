@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap = +prompt("nhập số vào");
+    let a = 1;
+    let b = 0;
+    let c = 0;
+    let mang = [];
+    for (let i = 0; i < nhap; i++) {
+        b = a;
+        a = c;
+        c = b + a;
+        mang.push(c);
+    }
+    alert(mang);
+
+</script>
+
+</body>
+<!--let n;-->
+<!--do {-->
+<!--n = +prompt("Nhập số fibonacci bạn cần in ra");-->
+<!--} while (n <= 0);-->
+<!--let mang = [];-->
+<!--let a = 1;-->
+<!--let b=0;-->
+<!--let temp = 0;-->
+<!--for (let i = 0; i < n; i++) {-->
+<!--b = a;-->
+<!--a = temp;-->
+<!--temp = b + a;-->
+<!--mang.push(temp);-->
+<!--}-->
+<!--alert(mang);-->
+
+</html>

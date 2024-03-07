@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let module = +prompt("Nhập số buổi học trong một Module :");
+    let soBuoiVang = +prompt("Nhập số ngày học sinh vắng học :");
+    let tiLeVangHoc = (soBuoiVang / module) * 100;
+    alert(tiLeVangHoc + '%');
+    if (tiLeVangHoc < 10) {
+        alert("Gửi gmail cảnh báo cho học sinh không  nên nghỉ học nữa ");
+    } else if (tiLeVangHoc <= 20) {
+        alert("gửi gmail buộc học sinh đó phải làm đơn chuyển lớp và cấm không cho thi nữa Module");
+    }
+
+
+</script>
+
+</body>
+</html>

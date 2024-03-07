@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap1 = +prompt("Nhập độ dài mảng 1 ");
+    let mang1 = [];
+    for (let i = 0; i < nhap1; i++) {
+        let nhapPhanTu1 = +prompt("Nhập các phần tử vào mảng.Phần tử phải lớn hơn 0");
+        mang1.push(nhapPhanTu1);
+    }
+    let nhap2 = +prompt("Nhập độ dài mảng 2 ");
+    let mang2 = [];
+    for (let i = 0; i < nhap2; i++) {
+        let nhapPhanTu1 = +prompt("Nhập các phần tử vào mảng.Phần tử phải lớn hơn 0");
+        mang2.push(nhapPhanTu1);
+    }
+    alert("Phần tử mảng 1 là :" + mang1 + '\n' +
+        "Phần tử mảng 2 là :" + mang2);
+    let max = mang1[0] / mang2[0];
+    for (let i = 0; i < mang1.length; i++) {
+        if (max < mang1[i] / mang2[i]) {
+            max = mang1[i] / mang2[i];
+            max = i;
+        }
+
+    }
+    alert(mang1[max] + "/" + mang2[max] + "Chỉ số lớn nhất là " + max);
+
+
+</script>
+
+</body>
+</html>

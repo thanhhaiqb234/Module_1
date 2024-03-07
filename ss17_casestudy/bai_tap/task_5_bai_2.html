@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    do {
+        n = +prompt("Nhập độ dài của mảng N");
+        m = +prompt("Nhập độ dài của mảng M");
+    } while (n <= 0);
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array[i] = [];
+        for (let j = 0; j < m; j++) {
+            array[i][j] = +prompt("nhập vào phần tử a [" + i + "][" + j + "]");
+
+        }
+    }
+    console.log(array);
+
+    function kiemTraSoNguyenTo(number) {
+        let flag = true;
+        if (number < 2) {
+            flag = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    flag = false;
+                }
+            }
+        }
+        return flag;
+    }
+
+    let mang = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (kiemTraSoNguyenTo(array[i][j])) {
+                mang.push(array[i][j]);
+            }
+        }
+    }
+    alert(mang);
+</script>
+
+</body>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+</html>

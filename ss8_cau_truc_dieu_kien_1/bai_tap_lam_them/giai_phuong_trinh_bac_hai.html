@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let A = +prompt("Nhập A");
+    let B = +prompt("Nhập B");
+    let C = +prompt("Nhập C");
+    let denta = Math.pow(B,2) - 4 * A * C;
+    alert(denta);
+    let x1;
+    let x2;
+    if (denta < 0) {
+        alert("Phương thình vô nghiệm");
+    } else if (denta == 0) {
+        x1 = x2 = -B / 2 * A;
+        alert("Phương trình có nghiệm kép là x = " + x1);
+    } else if (denta > 0) {
+        x1 = (-B + Math.sqrt(denta)) / 2 * A;
+        x2 = (-B - Math.sqrt(denta)) / 2 * A;
+        alert("Phương trình có hai nghiệm phân biệt là" + "x1 = " + x1 + " x2 = " + x2);
+    }
+
+</script>
+
+</body>
+</html>

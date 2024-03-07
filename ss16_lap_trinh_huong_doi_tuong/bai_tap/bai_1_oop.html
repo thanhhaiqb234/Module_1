@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="them()">Thêm học sinh </button>
+<button onclick="sua()">Sửa học sinh</button>
+<button onclick="xoa()">Xóa học sinh</button>
+<p id="ketQua"></p>
+
+
+
+<script>
+    class HocSinh{
+        constructor(maHocSinh,ten,lop,gmail,namSinh) {
+            this.maHocSinh = maHocSinh;
+            this.ten = ten;
+            this.lop = lop;
+            this.gmail =gmail;
+            this.namSinh = namSinh;
+        }
+        setMaHocSinh(maHocSinh){
+            this.maHocSinh = maHocSinh;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        setLop(lop){
+            this.lop = lop;
+        }
+        setGmail(gmail){
+            this.gmail = gmail;
+        }
+        setNamSinh(namSinh){
+            this.namSinh = namSinh;
+        }
+        getMaHocSinh(){
+            return this.maHocSinh;
+        }
+        getTen(){
+            return this.ten;
+        }
+        getLop(){
+            return this.lop;
+        }
+        getGmail(){
+            return this.gmail;
+        }
+        getNamSinh(){
+            return this.namSinh;
+        }
+    }
+    function hienThi(bang){
+        let taoBang = '<table border="5" cellspacing="0">\n' +
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Mã học sinh</th>\n' +
+            '        <th>Tên Hoc Sinh</th>\n' +
+            '        <th>Lớp</th>\n' +
+            '        <th>Gmail</th>\n' +
+            '        <th>Ngày tháng năm sinh</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < bang.length; i++) {
+            taoBang += '  <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+bang[i].getMaHocSinh()+'</td>\n' +
+                '        <td>'+bang[i].getTen()+'</td>\n' +
+                '        <td>'+bang[i].getLop()+'</td>\n' +
+                '        <td>'+bang[i].getGmail()+'</td>\n' +
+                '        <td>'+bang[i].getNamSinh()+'</td>\n' +
+                '    </tr>';
+        }
+        taoBang += '</table>';
+        document.getElementById("ketQua").innerHTML = taoBang;
+    }
+    let mang1 = [];
+    let hocSinh1 = new HocSinh("HV-0003","Đinh Thanh Hải","C0223G1","dinhthanhhai@gmail.com","20/09/1999");
+    let hocSinh2 = new HocSinh("HV-0003","Phạm Công Nam","C0223G1","dinhthanhhai@gmail.com","20/09/1999");
+    let hocSinh3 = new HocSinh("HV-0003","Kim Ngọc Thanh","C0223G1","dinhthanhhai@gmail.com","20/09/1999");
+    mang1.push(hocSinh1,hocSinh2,hocSinh3);
+    hienThi(mang1);
+    function them(){
+        let maHocSinh = prompt("Nhập mã học sinh mới vào");
+        let ten = prompt("Nhập tên học sinh mới vào");
+        let lop = prompt("Nhập lớp vào");
+        let gmail = prompt("Nhập Gmail của học sinh đó vào");
+        let namSinh = prompt("Nhập ngày tháng năm sinh của học sinh đó vào yy/yy/yyyy");
+        let mang = new HocSinh(maHocSinh,ten,lop,gmail,namSinh);
+        mang1.push(mang);
+        hienThi(mang1);
+    }
+    function sua(){
+        let nhap = prompt("Nhập tên học sinh cần sửa vào");
+        let flag = false;
+        let a = 0;
+        for (let i = 0; i < mang1.length; i++) {
+            if (nhap === mang1[i].ten){
+                a = i;
+                flag = true;
+            }
+        }
+        if (flag===true){
+            let maHocSinh = prompt("Nhập mã học sinh mới vào");
+            let ten = prompt("Nhập tên học sinh mới vào");
+            let lop = prompt("Nhập lớp vào");
+            let gmail = prompt("Nhập Gmail của học sinh đó vào");
+            let namSinh = prompt("Nhập ngày tháng năm sinh của học sinh đó vào yy/yy/yyyy");
+            mang1[a].setMaHocSinh(maHocSinh);
+            mang1[a].setTen(ten);
+            mang1[a].setLop(lop);
+            mang1[a].setGmail(gmail);
+            mang1[a].setNamSinh(namSinh);
+        }else {
+            alert("No");
+        }
+        hienThi(mang1);
+    }
+    function xoa(){
+        let nhap = prompt("Nhập tên học sinh mà bạn muốn xóa");
+        let flag = false;
+        for (let i = 0; i < mang1.length; i++) {
+            if (nhap === mang1[i].ten){
+                let xoa = confirm("Bạn có chắc chắn là muốn xóa học sinh này không");
+                mang1.splice(i,1);
+                flag = true;
+            }
+        }
+        if (flag===false){
+            alert("Tên học sinh bạn nhập không có");
+        }
+        hienThi(mang1);
+    }
+
+</script>
+</body>
+</html>

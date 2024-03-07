@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="themMoi()">Thêm mới học sinh</button>
+<button onclick="sua()">Sửa học sinh</button>
+<button onclick="xoa()">Xóa học sinh</button>
+<p id="ketQua"></p>
+
+
+<script>
+    class HocSInh{
+        constructor(maHocSinh,ten,lop,gmail,diaChi) {
+            this.maHocSinh = maHocSinh;
+            this.ten = ten;
+            this.lop = lop;
+            this.gmail = gmail;
+            this.diaChi = diaChi;
+        }
+        setMaHocSinh(maHocSinh){
+            this.maHocSinh = maHocSinh;
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        setLop(lop){
+            this.lop = lop;
+        }
+        setGmail(gmail){
+            this.gmail = gmail;
+        }
+        setDiaChi(diaChi){
+            this.diaChi = diaChi;
+        }
+        getMaHocSinh(){
+            return this.maHocSinh;
+        }
+        getTen(){
+            return this.ten;
+        }
+        getLop(){
+            return this.lop;
+        }
+        getGmail(){
+            return this.gmail;
+        }
+        getDiaChi(){
+            return this.diaChi;
+        }
+    }
+    function hienThi(bang){
+        let taoBang = '<table border="5" cellspacing="0">\n' +
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Mã học sinh </th>\n' +
+            '        <th>Tên học sinh</th>\n' +
+            '        <th>Lớp</th>\n' +
+            '        <th>Gmail của học sinh</th>\n' +
+            '        <th>Quê quán của học sinh</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < bang.length; i++) {
+            taoBang += ' <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+bang[i].getMaHocSinh()+'</td>\n' +
+                '        <td>'+bang[i].getTen()+'</td>\n' +
+                '        <td>'+bang[i].getLop()+'</td>\n' +
+                '        <td>'+bang[i].getGmail()+'</td>\n' +
+                '        <td>'+bang[i].getDiaChi()+'</td>\n' +
+                '    </tr>';
+        }
+        taoBang += '</table>';
+        document.getElementById("ketQua").innerHTML = taoBang;
+    }
+    let mang = [];
+    let hocSinh1 = new HocSInh("HV-0003","Đinh Thanh Hải","C0223G1","dinhthanhhai@gmail.com","Minh Hóa Quảng Bình");
+    let hocSinh2 = new HocSInh("HV-0003","Kim Ngoc Thành","C0223G1","dinhthanhhai@gmail.com","Minh Hóa Quảng Bình");
+    let hocSinh3 = new HocSInh("HV-0003","Phạm Quang Hưng","C0223G1","dinhthanhhai@gmail.com","Minh Hóa Quảng Bình");
+    let hocSinh4 = new HocSInh("HV-0003","Cao Trần Cường","C0223G1","dinhthanhhai@gmail.com","Minh Hóa Quảng Bình");
+    let hocSinh5 = new HocSInh("HV-0003","Đinh Tuấn Kiệt","C0223G1","dinhthanhhai@gmail.com","Minh Hóa Quảng Bình");
+    mang.push(hocSinh1,hocSinh2,hocSinh3,hocSinh4,hocSinh5);
+    hienThi(mang);
+    function themMoi(){
+        let maSo = prompt("Nhập mã số của học sinh mới vào đây");
+        let ten = prompt("Nhập tên của học sinh mới vào đây");
+        let lop = prompt("Nhập lớp của học sinh mới vào đây");
+        let giaml = prompt("Nhập gmail của học sinh mới vào dây nếu có");
+        let diaChi = prompt("Nhập địa chỉ của học sinh mới vào đây");
+        let mang1 = new HocSInh(maSo,ten,lop,giaml,diaChi);
+        mang.push(mang1);
+        hienThi(mang);
+    }
+    function sua(){
+        let nhapTen = prompt("Nhập tên của học sinh cầm sửa ");
+        let flag = false;
+        let a = 0
+        for (let i = 0; i < mang.length; i++) {
+            if (nhapTen === mang[i].ten){
+                flag = true;
+                a = i;
+            }
+        }
+        if (flag === true){
+            let maSo = prompt("Nhập mã số của học sinh mới vào đây");
+            let ten = prompt("Nhập tên của học sinh mới vào đây");
+            let lop = prompt("Nhập lớp của học sinh mới vào đây");
+            let giaml = prompt("Nhập gmail của học sinh mới vào dây nếu có");
+            let diaChi = prompt("Nhập địa chỉ của học sinh mới vào đây");
+            mang[a].setMaHocSinh(maSo);
+            mang[a].setTen(ten);
+            mang[a].setLop(lop);
+            mang[a].setGmail(giaml);
+            mang[a].setDiaChi(diaChi);
+        }else {
+            alert("Tên bạn nhập Không có ");
+        }
+        hienThi(mang);
+    }
+    function xoa(){
+        let nhap = prompt("Nhập tên học sinh mà bạn cần muốn xoa");
+        let flag = false;
+        for (let i = 0; i < mang.length; i++) {
+            if (nhap === mang[i].ten){
+                flag = true;
+                let xoa = confirm("Bạn có chắc chắn là mình đã muốn xóa hay chưa ");
+                mang.splice(i,1);
+            }
+        }
+        if (flag === false){
+            alert("Tện học sinh bạn nhập không có");
+        }
+        hienThi(mang);
+    }
+document.writeln()
+</script>
+</body>
+
+</html>

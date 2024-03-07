@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang1 = [-2,-3,-5,2,11,13,10,9,5];
+    function KiemTra(mang){
+        let flag = false;
+        let mang2 = [];
+        for (let i = 0; i < mang.length; i++) {
+            flag = true;
+            if (mang[i] <= 1){
+                flag = false;
+                continue;
+            }else {
+                if (mang[i] === 2){
+                    flag = true;
+                    mang2.push(mang[i]);
+                    continue;
+                }else {
+                    for (let j = 2; j < mang[i]; j++) {
+                        if (mang[i] % j === 0){
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag === true){
+                        mang2.push(mang[i]);
+                    }
+                }
+
+            }
+        }
+
+        alert(mang2);
+    }
+    KiemTra(mang1);
+</script>
+<!--let nhap = +prompt("Nhập số cần kiểm tra vào");-->
+<!--kiemTra(nhap);-->
+
+<!--function kiemTra(array) {-->
+<!--let flag = false;-->
+<!--for (let i = 0; i < array; i++) {-->
+<!--flag = true;-->
+<!--if (array < 2) {-->
+<!--flag = false;-->
+<!--} else if (array === 2) {-->
+<!--flag = true;-->
+<!--} else {-->
+<!--for (let j = 2; j < array; j++) {-->
+<!--if (array % j === 0) {-->
+<!--flag = false;-->
+<!--}-->
+<!--}-->
+<!--}-->
+
+
+<!--}-->
+<!--if (flag === true) {-->
+<!--console.log("oki");-->
+<!--} else {-->
+<!--console.log("no");-->
+
+<!--}-->
+<!--}-->
+
+
+</body>
+</html>

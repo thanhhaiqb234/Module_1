@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập số vào");
+    let mang = [];
+
+    function findMaxNumber(n) {
+        if (n.length !== 4) {
+            alert('-1');
+        } else {
+            mang = n.split("");
+            for (let i = 0; i < mang.length - 1; i++) {
+                if (mang[i] < mang[i + 1]) {
+                    mang.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        alert(mang.join(""));
+    }
+
+    findMaxNumber(n);
+
+</script>
+
+</body>
+</html>

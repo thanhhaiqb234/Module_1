@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập vào độ dài của mảng");
+    } while (n < 0);
+    let mang = [];
+    for (let i = 0; i < n; i++) {
+        let array = +prompt("Nhập các phần tử");
+        mang.push(array);
+    }
+    for (let i = 0; i < mang.length - 1; i++) {
+        for (let j = i + 1; j < mang.length; j++) {
+            if (mang[j] > mang[i]) {
+                let x = mang[i];
+                mang[i] = mang[j];
+                mang[j] = x;
+            }
+        }
+    }
+
+    console.log(mang[1]);
+</script>
+
+</body>
+</html>

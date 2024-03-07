@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    do {
+        n = +prompt("Nhập độ dài của mảng N");
+        m = +prompt("Nhập độ dài của mảng M");
+    } while (n <= 0);
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array[i] = [];
+        for (let j = 0; j < m; j++) {
+            array[i][j] = +prompt("nhập vào phần tử a [" + i + "][" + j + "]");
+        }
+    }
+    let tong = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (i === j || i + j === array.length) {
+                tong += array[i][j];
+            }
+        }
+    }
+    console.log(array);
+    console.log(tong);
+
+</script>
+
+</body>
+</html>

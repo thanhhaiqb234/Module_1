@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let mang1 = [1,2,3,4,5,6,7,8,9,25,36,64,49];
+function kiemTra(mang){
+    let mang2 = [];
+    let tong = 0;
+    for (let i = 0; i < mang.length; i++) {
+        if (Math.sqrt(mang[i])%1 === 0){
+            mang2.push(mang[i]);
+            tong += mang[i];
+        }
+    }
+    alert(mang2);
+    alert(tong);
+}
+kiemTra(mang1);
+</script>
+<!--// let mang = [1,2,3,4,5,6,7,8,9,16];-->
+<!--// alert(kiemTra(mang))-->
+<!--// function kiemTra(arr) {-->
+<!--//     let mang2 = [];-->
+<!--//     for (let i = 0; i < mang.length; i++) {-->
+<!--//         if (Math.sqrt(mang[i])%1===0){-->
+<!--//             mang2.push(mang[i]);-->
+<!--//-->
+<!--//         }-->
+<!--//     }-->
+<!--//     return mang2;-->
+<!--// }-->
+</body>
+</html>

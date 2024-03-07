@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h2>Đặt đồ uống</h2>
+    <select id="id" style="background: brown">
+        <option value="15">1:Cafe</option>
+        <option value="20">2:Cam vắt</option>
+        <option value="21">3:Nước ép cà rốt</option>
+        <option value="22">4:Nước ép cà chua</option>
+        <option value="7">5:nước lọc</option>
+        <option value="25">6:Nước dừa</option>
+    </select>
+    <br>
+    <br>
+    Nhập số lượng vào đây<input type="number" id="soLuong">
+    <br>
+    <br>
+
+    <button style="background: royalblue ; " value="" type="button" onclick="tinhTien()">TÍNH TIỀN</button>
+    <p id="ketQua">Số tiền cần phải trả là :</p>
+</form>
+<script>
+    function tinhTien() {
+        let chonDoUong = document.getElementById('id').value;
+        let soLuong = document.getElementById('soLuong').value;
+        let ketQuy = document.getElementById('ketQua').value;
+        if (chonDoUong == 15) {
+            let a = soLuong * 15000;
+            document.getElementById('ketQua').innerHTML = a;
+        } else if (chonDoUong == 20) {
+            let b = soLuong * 20000;
+            document.getElementById('ketQua').innerHTML = b;
+        } else if (chonDoUong == 21) {
+            let c = soLuong * 21000;
+            document.getElementById('ketQua').innerHTML = c;
+        } else if (chonDoUong == 22) {
+            let d = soLuong * 22000;
+            document.getElementById('ketQua').innerHTML = d;
+        } else if (chonDoUong == 7) {
+            let e = soLuong * 7000;
+            document.getElementById('ketQua').innerHTML = e;
+        } else if (chonDoUong == 25) {
+            let f = soLuong * 25000;
+            document.getElementById('ketQua').innerHTML = f;
+        }
+
+    }
+</script>
+</body>
+
+</html>

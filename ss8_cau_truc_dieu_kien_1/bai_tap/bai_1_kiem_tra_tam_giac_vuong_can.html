@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập cạnh A");
+    let b = +prompt("Nhập cạnh B");
+    let c = +prompt("Nhập cạnh C");
+    let key = a>0||b>0||c>0;
+    let key1=(a*a)==(b*b)+(c*c);
+    let key2=(b*b)==(c*c)+(a*a);
+    let key3=(c*c)==(a*a)+(b*b);
+    if (key&&(key1||key2||key3)){
+        alert("Đây là tam giác vuông");
+    }else{
+        alert("Không phải tam giác vuông");
+    }
+
+</script>
+</body>
+</html>

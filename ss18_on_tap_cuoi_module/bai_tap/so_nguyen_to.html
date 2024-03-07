@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let mang1 = [1,2,3,4,5,6,7,7,8,11,13,17,19,10,6,8,4,9];
+ function kiemTra(mang){
+     let flag = false;
+     let mang2 = [];
+     for (let i = 0; i < mang.length; i++) {
+         flag = true;
+         if (mang[i] < 2 ){
+             flag = false;
+             continue;
+         }else {
+             if (mang[i] === 2){
+                 mang2.push(mang[i]);
+                 flag = true;
+                 continue;
+             }else {
+                 for (let j = 2; j < mang[i]; j++) {
+                     if (mang[i] % j === 0 ){
+                         flag = false;
+                         break;
+                     }
+                 }
+             }
+             if (flag===true){
+                 mang2.push(mang[i]);
+             }
+         }
+     }
+     alert(mang2);
+ }
+ kiemTra(mang1);
+</script>
+<!--let mang = [-9,0,1,5, 7, 11, 2, 4, 2, 5, 23, 3, 9,17];-->
+<!--let mang2 = [];-->
+<!--for (let i = 0; i < mang.length; i++) {-->
+<!--let flag=true;-->
+<!--if (mang[i] <= 1) {-->
+<!--continue;-->
+<!--} else {-->
+<!--if (mang[i] === 2) {-->
+<!--mang2.push(mang[i]);-->
+<!--continue;-->
+<!--}else {-->
+<!--for (let j = 2; j < mang[i]; j++) {-->
+<!--if (mang[i] % j === 0) {-->
+<!--flag = false;-->
+<!--break;-->
+<!--}-->
+<!--}-->
+<!--if (flag) {-->
+<!--mang2.push(mang[i]);-->
+<!--}-->
+<!--}-->
+<!--}-->
+<!--}-->
+<!--alert(mang2);-->
+
+</body>
+</html>

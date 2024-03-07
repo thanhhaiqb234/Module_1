@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let nhap = +prompt("Nhập số cần kiểm tra ước vào");
+let tong = 0;
+let mang = [];
+for (let i = 0; i < nhap; i++) {
+    if (nhap % i === 0){
+        tong += i;
+        mang.push(i);
+    }
+}
+alert(mang);
+alert(tong);
+</script>
+
+</body>
+</html>

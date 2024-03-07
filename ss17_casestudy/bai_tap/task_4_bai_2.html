@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function xauKyTu(str) {
+        let mang = str.split("");
+        let mang2 = [];
+        for (let i = 0; i < mang.length; i++) {
+            if (!mang2.includes(mang[i])) {
+                mang2.push(mang[i]);
+            }
+
+        }
+        alert("Các ký tự khác nhau là :" + mang2);
+    }
+
+    let nhap = prompt("Nhập các ký tự vào");
+    xauKyTu(nhap);
+</script>
+
+</body>
+<!--Bài 2: Cho xâu kí tự. Hãy đếm số lượng ký tự khác nhau trong xâu đó-->
+<!--Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.-->
+<!--⇨	Có 3 ký tự khác nhau là a, b và c.-->
+
+</html>

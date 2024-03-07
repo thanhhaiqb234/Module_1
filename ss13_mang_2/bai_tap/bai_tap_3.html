@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập độ dài của mảng");
+    } while (n < 0);
+    let mang = [];
+    for (let i = 0; i < n; i++) {
+        mang[i] = +prompt("nhập a[" + i + "]");
+        for (let j = 0; j < i; j++) {
+            while (mang[j]==mang[i]) {
+                mang[i] = +prompt("nhập a[" + i + "]");
+            }
+        }
+    }
+    alert(mang);
+
+
+</script>
+
+</body>
+</html>

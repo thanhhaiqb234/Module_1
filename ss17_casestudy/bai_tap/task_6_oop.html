@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="themMoi()">Thêm mới học viên</button>
+<button onclick="suaThongTin()">Sửa thông tin học viên</button>
+<button onclick="xoa()">Xóa học viên</button>
+<p id="ketQua"></p>
+<script>
+    class HocSinh {
+        constructor(maHocSinh, ten, lop, email, ngaySinh) {
+            this.maHocSinh = maHocSinh;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+        }
+
+        setMaHocSinh(maHocSinh) {
+            this.maHocSinh = maHocSinh;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setLop(lop) {
+            this.lop = lop;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        getMaHocSinh() {
+            return this.maHocSinh;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        getLop() {
+            return this.lop;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+    }
+
+    function taobang(danhSach) {
+        let bang = '<table border="5" cellspacing="0" >\n' +
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Mã học viên</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Lớp</th>\n' +
+            '        <th>Email</th>\n' +
+            '        <th>Ngày sinh</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            bang += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getMaHocSinh() + '</td>\n' +
+                '        <td>' + danhSach[i].getTen() + '</td>\n' +
+                '        <td>' + danhSach[i].getLop() + '</td>\n' +
+                '        <td>' + danhSach[i].getEmail() + '</td>\n' +
+                '        <td>' + danhSach[i].getNgaySinh() + '</td>\n' +
+                '    </tr>';
+        }
+        bang += '</table>'
+        document.getElementById("ketQua").innerHTML = bang;
+    }
+
+    let danhSachHocSinh = [];
+    let hocSinh1 = new HocSinh("HV-0001", "Nguyên Văn A", "C0323G1", "nguyenvana@email.com", "01/01/1990");
+    let hocSinh2 = new HocSinh("HV-0002", "Nguyên Văn A", "C0323G1", "nguyenvana@email.com", "01/01/1990");
+    let hocSinh3 = new HocSinh("HV-0003", "Nguyên Văn A", "C0323G1", "nguyenvana@email.com", "01/01/1990");
+    danhSachHocSinh.push(hocSinh1, hocSinh2, hocSinh3);
+    taobang(danhSachHocSinh);
+
+    function themMoi() {
+        let nhapMaHocSinh = prompt("Nhập mã học sinh");
+        let nhapTen = prompt("Nhập tên của bạn vào");
+        let nhapLop = prompt("Nhập lớp bạn đang học");
+        let nhapEmail = prompt("Nhập Email của bạn vào");
+        let nhapNamSinh = prompt("Nhập ngày tháng năm sinh của bạn vào yy/yy/yyyy");
+        let hoaSinh = new HocSinh(nhapMaHocSinh, nhapTen, nhapLop, nhapEmail, nhapNamSinh);
+        danhSachHocSinh.push(hoaSinh);
+        taobang(danhSachHocSinh);
+    }
+
+    function suaThongTin() {
+        let suaThongTin = prompt("Nhập mã học viên cần sửa");
+        let flag = false;
+        let i = 0;
+        let a = 0;
+        for (i; i < danhSachHocSinh.length; i++) {
+            if (suaThongTin === danhSachHocSinh[i].maHocSinh) {
+                a = i;
+                flag = true;
+
+            }
+
+        }
+        if (flag === true) {
+            let nhapMaHocSinh = prompt("Nhập mã học sinh mới vào");
+            let nhapTen = prompt("Nhập tên của bạn vào");
+            let nhapLop = prompt("Nhập lớp bạn đang học");
+            let nhapEmail = prompt("Nhập Email của bạn vào");
+            let nhapNamSinh = prompt("Nhập ngày tháng năm sinh của bạn vào yy/yy/yyyy");
+            danhSachHocSinh[a].setMaHocSinh(nhapMaHocSinh);
+            danhSachHocSinh[a].setTen(nhapTen);
+            danhSachHocSinh[a].setLop(nhapLop);
+            danhSachHocSinh[a].setEmail(nhapEmail);
+            danhSachHocSinh[a].setNgaySinh(nhapNamSinh);
+        } else {
+            alert("Mã học sinh nhập vào không có");
+        }
+        taobang(danhSachHocSinh);
+    }
+
+    function xoa() {
+        let xoaMaHocSinh = prompt("Nhập Mã học sinh cần xóa");
+        let xoa = confirm("Bạn có muốn xóa không");
+        let flag = false;
+        if (xoa) {
+            for (let i = 0; i < danhSachHocSinh.length; i++) {
+                if (xoaMaHocSinh === danhSachHocSinh[i].maHocSinh) {
+                    danhSachHocSinh.splice(i, 1);
+                    flag = true;
+                }
+            }
+            if (flag == false) {
+                alert("mã không đúng")
+            }
+        } else {
+            alert("không xoa");
+        }
+        taobang(danhSachHocSinh);
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

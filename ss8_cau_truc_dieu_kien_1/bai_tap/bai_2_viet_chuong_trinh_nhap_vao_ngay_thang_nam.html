@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap = prompt("Nhập tháng và năm vào:mm/yyyy")
+    let dem = nhap.split('/');
+    let nhapThang = +dem[0];
+    let nhapNam = +dem[1];
+    switch (nhapThang) {
+        case 2 :
+            if ((nhapNam % 4 === 0 && nhapNam % 100 !==0 ) || nhapNam % 400 === 0) {
+                alert("Tháng này có 29 ngày");
+                break;
+            } else {
+                alert("Tháng này có28 ngày")
+                break;
+            }
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("Thánh này có 31 ngày");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert("Tháng ngày có 30 ngày");
+            break;
+    }
+
+</script>
+
+</body>
+</html>

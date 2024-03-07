@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let mang1 = [1,2,3,4,5,6,7,8,9,28,8128,9];
+  function kiemTraMang(mang){
+      let mang2 = [];
+      for (let i = 0; i < mang.length; i++) {
+          if (kiemTra(mang[i])){
+              mang2.push(mang[i]);
+          }
+      }
+      alert(mang2);
+  }
+      kiemTraMang(mang1);
+    function kiemTra(number){
+        let tong = 0;
+        for (let i = 1; i < number; i++) {
+            if (number % i === 0){
+                tong += i;
+            }
+        }
+        if (tong === number){
+           return true;
+        }else {
+            return false;
+        }
+    }
+</script>
+<!--let mang  = [1,2,3,4,5,6,7,8,9,28];-->
+<!--function kiemTraSoHoanHao(newarray) {-->
+<!--let mang1 = [];-->
+<!--for (let i = 0; i < newarray.length; i++) {-->
+<!--if (kiemTra(newarray[i])){-->
+<!--mang1.push(newarray[i]);-->
+<!--}-->
+<!--}-->
+<!--alert(mang1);-->
+<!--}-->
+<!--kiemTraSoHoanHao(mang)-->
+<!--function kiemTra(array){-->
+<!--let b = 0;-->
+<!--for (let i = 0; i < array; i++) {-->
+<!--if (array % i ===0){-->
+<!--b += i;-->
+<!--}-->
+<!--}if (b === array){-->
+<!--return true;-->
+<!--}else {-->
+<!--return false;-->
+<!--}-->
+<!--}-->
+</body>
+</html>

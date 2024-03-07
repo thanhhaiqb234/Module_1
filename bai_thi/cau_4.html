@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="muaVe()">Mua vé xem phim</button>
+<p id="ketQua"></p>
+<script>
+    class XemPhim {
+        constructor(maPhim, tenPhim, ngayChieu, thoiLuong, ve) {
+            this.maPhim = maPhim;
+            this.tenPhim = tenPhim;
+            this.ngayChieu = ngayChieu;
+            this.thoiLuong = thoiLuong;
+            this.ve = ve;
+        }
+
+        setMaPhim(maPhim) {
+            this.maPhim = maPhim;
+        }
+
+        setTenPhim(tenPhim) {
+            this.tenPhim = tenPhim;
+        }
+
+        setNgayChieu(ngayChieu) {
+            this.ngayChieu = ngayChieu;
+        }
+
+        setThoiLuong(thoiLuong) {
+            this.thoiLuong = thoiLuong;
+        }
+
+        setVe(ve) {
+            this.ve = ve;
+        }
+
+        getMaPhim() {
+            return this.maPhim;
+        }
+
+        getTenPhim() {
+            return this.tenPhim;
+        }
+
+        getNgayChieu() {
+            return this.ngayChieu;
+        }
+
+        getThoiLuong() {
+            return this.thoiLuong;
+        }
+
+        getVe() {
+            return this.ve;
+        }
+    }
+
+    function hienThi(bang) {
+        let taoBang = '<table border="5" cellspacing="0">\n' +
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Mã phim</th>\n' +
+            '        <th>Tên phim</th>\n' +
+            '        <th>Ngày chiếu</th>\n' +
+            '        <th>Thời lượng</th>\n' +
+            '        <th>Số Lượng Vé</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < bang.length; i++) {
+            taoBang += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + bang[i].getMaPhim() + '</td>\n' +
+                '        <td>' + bang[i].getTenPhim() + '</td>\n' +
+                '        <td>' + bang[i].getNgayChieu() + '</td>\n' +
+                '        <td>' + bang[i].getThoiLuong() + '</td>\n' +
+                '        <td>' + bang[i].getVe() + '</td>\n' +
+                '    </tr>';
+        }
+        taoBang += '</table>';
+        document.getElementById("ketQua").innerHTML = taoBang;
+    }
+
+    let mang = [];
+    let phim1 = new XemPhim("HV-001", "Điệp viên 007", "20/05/2023", "120p", "30");
+    let phim2 = new XemPhim("HV-002", "Sát Thủ", "15/06/2023", "120p", "30");
+    let phim3 = new XemPhim("HV-003", "Diệp Vấn", "25/07/2023", "120p", "30");
+    mang.push(phim1, phim2, phim3);
+    hienThi(mang);
+
+    function muaVe() {
+        let nhapTenPhim = prompt("Nhập tên phim mà bạn muốn mua");
+        let flag = false;
+        let a = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if (nhapTenPhim === mang[i].tenPhim) {
+
+                a = i;
+                flag = true;
+            }
+        }
+        if (flag === true) {
+            let soLuongVe = prompt("Số lượng vế mà bạn cần mua : ");
+            let tong = mang[a].getVe() - soLuongVe;
+            mang[a].setVe(tong);
+            alert("Bạn đã mua thành công " + soLuongVe + " vé");
+        } else {
+            alert("Tên phim Bạn nhập không có");
+        }
+        hienThi(mang);
+    }
+</script>
+</body>
+</html>

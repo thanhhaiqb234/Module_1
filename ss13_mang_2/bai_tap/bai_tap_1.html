@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập độ dài của mảng");
+    } while (n <= 0);
+    let array1 = [];
+    for (let i = 0; i < n; i++) {
+        let nhapVao = +prompt("Nhập các phần tử vào mảng");
+        array1.push(nhapVao);
+    }
+    alert(array1);
+    let array2 = [];
+    let dem = 0;
+    for (let j = 0; j < array1.length; j++) {
+        if (array1[j] % 2 === 0 && j % 2 !== 0) {
+            array2.push(array1[j]);
+            dem += array1[j];
+        }
+    }alert("Các phần tử chẵn ở vị trí lẻ: "+array2)
+    alert("Tổng các phần tử chẵn ở vị trí lẻ: "+dem)
+
+</script>
+
+</body>
+</html>

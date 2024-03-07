@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập độ dài của mảng N");
+    } while (n >= 101);
+    let mang = [];
+    for (let i = 0; i < n; i++) {
+        let nhap = +prompt("Nhập các phần tử vào mảng N");
+        mang.push(nhap);
+    }
+
+    function kiemTra(soNguyenTo) {
+        let mang2 = [];
+        let tong = 0;
+        let flag = false;
+        for (let i = 0; i < soNguyenTo.length; i++) {
+            flag = true;
+            if (soNguyenTo[i] < 2) {
+                flag = false;
+                continue;
+            } else {
+                if (soNguyenTo[i] === 2) {
+                    mang2.push(soNguyenTo[i]);
+                    flag = true;
+                    continue;
+                } else {
+                    for (let j = 2; j < soNguyenTo[i]; j++) {
+                        if (soNguyenTo[i] % j === 0) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+                if (flag === true) {
+                    mang2.push(soNguyenTo[i]);
+                }
+            }
+        }
+        for (let i = 0; i < mang2.length; i++) {
+            tong += mang2[i];
+        }
+        alert("Các số nguyên tố có trong mảng :" + mang2);
+        alert("Tổng các số nguyên tố = " + tong);
+    }
+
+    kiemTra(mang);
+</script>
+</body>
+</html>

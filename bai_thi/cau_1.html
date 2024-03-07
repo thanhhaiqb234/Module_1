@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhâp N vào đây để kiểm tra");
+    } while (n >= 501);
+    let mang1 = [];
+    let dem = 0;
+    for (let i = 0; i < n; i++) {
+        if (n % i === 0) {
+            mang1.push(i);
+        }
+    }
+    alert("Các ước của " + n + " là " + mang1);
+    let mang2 = [];
+    let tong = 0;
+    for (let i = 0; i < mang1.length; i++) {
+        if (mang1[i] % 2 !== 0) {
+            dem++;
+            mang2.push(mang1[i]);
+            tong = tong + mang1[i] / dem;
+
+        }
+    }
+    alert("Các ước số lẻ của " + n + " là " + mang2);
+    alert("Tổng trung bình cộng các ước của số lẻ = " + tong);
+</script>
+
+</body>
+</html>

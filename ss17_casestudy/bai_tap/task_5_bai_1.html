@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    do {
+        n = +prompt("Nhập độ dài của mảng N");
+        m = +prompt("Nhập độ dài của mảng M");
+    } while (n <= 0);
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array[i] = [];
+        for (let j = 0; j < m; j++) {
+            array[i][j] = +prompt("nhập vào phần tử a [" + i + "][" + j + "]");
+        }
+    }
+    let sum = 0;
+    kiemTraSoChan(array);
+    function kiemTraSoChan(arr){
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 === 0){
+                   sum = arr[i][j] + sum;
+                }
+            }
+        }
+        alert("Tổng của các số chẵn trong ma trận bằng = "+sum);
+    }
+
+</script>
+<!--Bài 1: Viết hàm tính tổng các số chẵn trong ma
+ trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+</body>
+</html>

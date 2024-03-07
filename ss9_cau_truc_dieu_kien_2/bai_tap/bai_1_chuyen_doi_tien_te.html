@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin-left: 10%;
+        }
+
+    </style>
+    <style>
+        table {
+
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <select id="money1">
+                <option value="1">USD(Đô La)</option>
+                <option value="133.38">JPY(Yên)</option>
+                <option value="23448.50">VNĐ(Việt Nam Đồng)</option>
+                <option value="6.89">RMB(Tệ)</option>
+                <option value="0.81">GBP(Pound-Bảng Anh)</option>
+            </select>
+        </td>
+        <td>
+            <input id="nhapTien" type="number">
+        </td>
+        <td>
+            <select id="money2">
+                <option value="1">USD(Đô La)</option>
+                <option value="133.38">JPY(Yên)</option>
+                <option value="23448.50">VNĐ(Việt Nam Đồng)</option>
+                <option value="6.89">RMB(Tệ)</option>
+                <option value="0.81">GBP(Pound-Bảng Anh)</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="chuyenTien()">Kết quả</button>
+        </td>
+
+    </tr>
+
+</table>
+<p id="ketQua"></p>
+<script>
+    function chuyenTien() {
+        let nhapTienCanChuyen = document.getElementById("nhapTien").value;
+        let tienDoi1 = document.getElementById("money1").value;
+        let tienDoi2 = document.getElementById("money2").value;
+        let tienDaDoi = nhapTienCanChuyen * tienDoi2 / tienDoi1;
+        document.getElementById('ketQua').innerHTML = tienDaDoi;
+
+    }
+</script>
+
+</body>
+</html>

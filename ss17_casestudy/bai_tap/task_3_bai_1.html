@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang1 = [];
+    let nhapDoDai = +prompt("Nhập độ dài của mảng");
+    for (let i = 0; i < nhapDoDai; i++) {
+        let nhapPhanTu = +prompt("Nhập  phần tử thứ " + (i + 1) + " vào mảng");
+        mang1.push(nhapPhanTu);
+    }
+    alert(mang1);
+    let mang2 = [];
+    let sum = 0;
+    for (let i = 0; i < mang1.length; i++) {
+        sum += mang1[i];
+        mang2.push(sum);
+    }
+    alert(mang2);
+
+
+</script>
+</body>
+</html>

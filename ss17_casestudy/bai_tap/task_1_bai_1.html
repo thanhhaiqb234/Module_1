@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienLuong = +prompt("Nhập tiền lương của bạn vào");
+    let tong = 0;
+    let tienThue = 0;
+    if (tienLuong > 15000000) {
+        tong += (tienLuong / 100) * 20;
+        tienThue += tienLuong - tong;
+        alert("Tiền lương sau khi trừ thuế thu nhập cá nhân bạn nhận lại được là = " + tienThue);
+    }else if (tienLuong > 7000000){
+        tong += (tienLuong / 100) * 10;
+        tienThue += tienLuong - tong;
+        alert("Tiền lương sau khi trừ thuế thu nhập cá nhân bạn nhận lại được là = " + tienThue);
+    }else {
+        tong += (tienLuong / 100) * 5;
+        tienThue += tienLuong - tong;
+        alert("Tiền lương sau khi trừ thuế thu nhập cá nhân bạn nhận lại được là = " + tienThue);
+    }
+</script>
+
+</body>
+</html>

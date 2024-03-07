@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienLuong = +prompt("Nhập tiền lương");
+    let gioLamViec = +prompt("nhập số giờ làm viêc");
+    if (gioLamViec >= 200) {
+        tienLuong += (tienLuong / 100) * 20;
+        alert("Tiền thưởng mà bạn nhận được trong tháng này là =" + tienLuong);
+    } else if (gioLamViec <= 200 && gioLamViec >= 100) {
+        tienLuong += (tienLuong / 100) * 10;
+        alert("Tiền thưởng mà bạn nhận được trong tháng này là = " + tienLuong);
+    } else {
+        alert("Giờ làm của bạn không đạt yêu cầu nên không được thưởng ");
+    }
+
+</script>
+
+</body>
+</html>

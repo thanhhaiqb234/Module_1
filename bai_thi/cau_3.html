@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap = prompt("Nhập vào các ký tự mà bạn muốn");
+
+    function kiemTra(chuoi) {
+        let dem = 0;
+        let kyTu = [];
+        for (let i = 0; i < chuoi.length; i++) {
+            if(kyTu.includes(chuoi[i]))
+
+                for (let j = 0; j < chuoi[i]; j++) {
+                if (chuoi[i] === chuoi[j]){
+                    dem++;
+                    kyTu.push(chuoi[i]);
+                }
+            }
+            }
+        alert(kyTu);
+    }
+
+    kiemTra(nhap);
+</script>
+</body>
+</html>

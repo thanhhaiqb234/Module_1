@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        form {
+            text-align: center;
+            width: 400px;
+            margin-left: 40%;
+            background-color: rgba(165, 56, 42, 0.97);
+
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h2>TIP CALCULATOR</h2>
+    <h3>How much was your bill?</h3>
+    $ <input type="number" id="nhap">
+    <h3>How was your service?</h3>
+    <select id="hailong">
+        <option value="30">30%-Outstanding</option>
+        <option value="20">20%-Good</option>
+        <option value="15">15%-It was</option>
+        <option value="10">10%=BAD</option>
+        <option value="5">5%-Terrible</option>
+    </select>
+
+    <h3>How many people are sharing the bill?</h3>
+    <input type="number" id="soNguoi">people<br>
+    <br>
+    <button type="button" onclick="calculate()" value="" style="width: 160px; height: 50px; background: darkorange">
+        CALCULATE
+    </button>
+    <h1>TIP AMOUNT</h1>
+    <sup>$</sup>
+    <p id="ketQua"></p>
+    <h4>each</h4>
+</form>
+
+<script>
+    function calculate() {
+        let tongBill = document.getElementById('nhap').value;
+        let haiLong = document.getElementById('hailong').value;
+        let soNguoi = document.getElementById('soNguoi').value;
+        let tip = document.getElementById('ketQua').value;
+        if (haiLong == 30) {
+            let a = (tongBill * 30) / 100 / soNguoi;
+            document.getElementById('ketQua').innerHTML = a;
+        } else if (haiLong == 20) {
+            let b = (tongBill * 20) / 100 / soNguoi;
+            document.getElementById('ketQua').innerHTML = b;
+        } else if (haiLong == 15) {
+            let c = (tongBill * 15) / 100 / soNguoi;
+            document.getElementById('ketQua').innerHTML = c;
+        } else if (haiLong == 10) {
+            let d = (tongBill * 10) / 100 / soNguoi;
+            document.getElementById('ketQua').innerHTML = d;
+        } else if (haiLong == 5) {
+            let e = (tongBill * 5) / 100 / soNguoi;
+            document.getElementById('ketQua').innerHTML = e;
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

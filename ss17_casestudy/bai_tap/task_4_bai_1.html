@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function chuyenKyTu(str) {
+        let mang1 = str.toLowerCase();
+        let mang2 = mang1.split(" ");
+        let mang3 = [];
+        for (let i = 0; i < mang2.length; i++) {
+            if (mang2[i] !== "") {
+                mang3.push(mang2[i]);
+            }
+        }
+        let mang4 = [];
+        for (let i = 0; i < mang3.length; i++) {
+            let a = mang3[i].charAt(0).toUpperCase() + mang3[i].slice(1);
+            mang4.push(a);
+        }
+        return mang4.join(" ");
+    }
+
+    // function doiKyTu(str) {
+    //     let mang5 = str.split(" ");
+    //     let khoangCach = '';
+    //     for (let i = 0; i < mang5.length; i++) {
+    //         if (khoangCach.length < mang5[i].length) {
+    //             khoangCach = mang5[i];
+    //         }
+    //     }
+    //     return khoangCach;
+    // }
+
+
+    let nhap = prompt("Nhập ký tự cần chuyển hóa vào");
+    alert(chuyenKyTu(nhap));
+    // doiKyTu(nhap);
+</script>
+
+</body>
+<!--Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong-->
+<!--xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong TaN HAI => Truong Tan Hai.-->
+<!--Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập-->
+<!--xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.-->
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(srt) {
+        let srt1 = srt.split("")
+        alert(srt1)
+        let mang = [];
+        for (let i = 0; i < srt1.length; i++) {
+            if (srt1[i] === 'o' || srt1[i] === 'u' || srt1[i] === 'i'
+                || srt1[i] === 'a' || srt1 === 'e' || srt1 === 'O'
+                || srt1 === 'U' || srt1 === 'I'
+                || srt1 === 'A' || srt1 === 'E') {
+                mang.push(srt[i]);
+
+            }
+        }
+        return mang
+    }
+
+    let str2 = ('afibdbfbruytoui');
+    alert(checkString(str2));
+
+
+</script>
+
+</body>
+</html>
